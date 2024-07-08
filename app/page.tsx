@@ -1,11 +1,11 @@
 
-import Confirm from './deleveryapp/Confirm'
-import Payments from './deleveryapp/Payments'
-import Login from './deleveryapp/Login'
-import Register from './deleveryapp/Register'
-import RegisterVerify from './deleveryapp/RegisterVerify'
-import PaymentsDate from './deleveryapp/PaymentsDate'
-import Homepage from './deleveryapp/Homepage'
+import Confirm from './home/Confirm'
+import Payments from './home/Payments'
+import Login from './home/Login'
+import Register from './home/Register'
+import RegisterVerify from './home/RegisterVerify'
+import PaymentsDate from './home/PaymentsDate'
+import Homepage from './home/Homepage'
 export default function Home() {
   return (
     <main className="bg-white flex  flex-col items-center justify-between  m-auto mt-0  ">

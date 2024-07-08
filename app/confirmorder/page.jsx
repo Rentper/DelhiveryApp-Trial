@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../header/page";
 import Footer from "../footer/page";
+import Link from "next/link";
 const Confirm = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">
@@ -27,7 +28,9 @@ const Confirm = () => {
           <p className=" pl-20">10.5km</p>
         </div>
         <button className="text-gray-400  ml-52 text-md font-semibold ">Reject</button>
-        <button className="bg-orange-400 float-end   rounded-md text-white pl-4 pr-4 ">Accept</button>
+<Link href="/delevery">
+<button className="bg-orange-400 float-end   rounded-md text-white pl-4 pr-4 ">Accept</button>
+</Link>
       </div>
 
    
