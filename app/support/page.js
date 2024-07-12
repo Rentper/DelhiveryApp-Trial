@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import Footer from "../footer/page";
-import Link from "next/link";
 
 const Support = () => {
   const [checked, setChecked] = useState(false);
@@ -40,7 +39,10 @@ const Support = () => {
 
             <div className=" w-96 h-96 mt-2 pt-20     ">
               <div className="h-64  w-64 m-auto mt-[-80px] ">
-                <img src="/images/support.png" className="w-full h-full m-auto "></img>
+                <img
+                  src="/images/support.png"
+                  className="w-full h-full m-auto "
+                ></img>
               </div>
               <p className="text-gray-400 text-xs p-2 text-center m-auto ">
                 Need assistance on the go? Our supporty team is here for you!
@@ -73,11 +75,11 @@ const Support = () => {
                       </defs>
                     </svg>
                   </span>
-                  support 
+                  support
                 </button>
 
                 <button className="bg-orange-500 rounded-lg  p-2 px-8 text-white flex ">
-                  <span  className="mt-2 mr-3">
+                  <span className="mt-2 mr-3">
                     <svg
                       width="15"
                       height="15"

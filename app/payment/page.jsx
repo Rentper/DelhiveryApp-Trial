@@ -1,14 +1,6 @@
-
-
 "use client";
 import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { FaUser } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
-import { LuGalleryThumbnails } from "react-icons/lu";
-import { BiHeadphone } from "react-icons/bi";
-import { GiProfit } from "react-icons/gi";
 import { FaAngleRight } from "react-icons/fa6";
 import Footer from "../footer/page";
 import Link from "next/link";
@@ -66,15 +58,13 @@ const PaymentsDate = () => {
               </div>
 
               <div className=" h-[274px]  scroll-auto overflow-y-auto  text-sm bg-white  p-3 mt-2 w-[370px] m-auto drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)] rounded-2xl  ">
-               
-
                 <div className="bg-white drop-shadow-[0_0px_5px_rgba(0,0,0,0.25)]   p-2 mt-2 w-[350px] m-auto rounded-xl ">
                   <div className="flex justify-between ">
                     <p>Tue, 4June</p>
                     <p className=" ml-36 ">₹5000</p>
-<Link href="/payhistory">                    
-<FaAngleRight />
-</Link>
+                    <Link href="/payhistory">
+                      <FaAngleRight />
+                    </Link>
                   </div>
                 </div>
 
@@ -104,7 +94,7 @@ const PaymentsDate = () => {
                   <div className="flex justify-between ">
                     <p>Tue, 4June</p>
                     <p className=" ml-36 ">₹5000</p>
-                    
+
                     <FaAngleRight />
                   </div>
                 </div>
@@ -112,19 +102,16 @@ const PaymentsDate = () => {
                   <div className="flex justify-between ">
                     <p>Tue, 4June</p>
                     <p className=" ml-36 ">₹5000</p>
-                    
+
                     <FaAngleRight />
                   </div>
                 </div>
-             
               </div>
             </div>
             <div className="bg-white mt-8  ">
-            <Footer />
+              <Footer />
+            </div>
           </div>
-          </div>
-
-         
         </div>
       </div>
     </>
@@ -132,5 +119,3 @@ const PaymentsDate = () => {
 };
 
 export default PaymentsDate;
-
-

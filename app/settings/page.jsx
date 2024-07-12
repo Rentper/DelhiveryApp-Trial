@@ -1,10 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import Footer from "../footer/page";
-import Link from "next/link";
-import { MdOutlineManageAccounts } from "react-icons/md";
-import { FaAngleRight } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 const Settings = () => {
   const [checked, setChecked] = useState(false);

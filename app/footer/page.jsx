@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="w-96 sticky    ">
           
           <div className=" mt-15 bg-orange-500 rounded-lg w-[350px] m-4 text-white p-2 flex justify-around ">
-            <Link href="/">
+            <Link href="/homepage">
             <AiFillHome className=" w-[26px] h-[26px] " />
             </Link>
 

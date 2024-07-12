@@ -1,19 +1,13 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
-Link;
-const Register = () => {
-  const [emailError, setEmailError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+const Login = () => {
+const router =useRouter();
   const [passwordError, setPasswordError] = useState("");
-  const [verificationCodeError, setVerificationCodeError] = useState("");
-
   const [details, setDetails] = useState({
-    fullname: "",
-    email: "",
     phoneno: "",
     password: "",
-    vcode: "",
   });
 
   const handleChange = (event) => {
@@ -25,18 +19,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(details)
-    if (!validateEmail(details.email)) {
-      setEmailError("Invalid email");
-    } else {
-      setEmailError("");
-    }
-
-    if (!validatePhone(details.phoneno)) {
-      setPhoneError("Invalid phone number");
-    } else {
-      setPhoneError("");
-    }
+    // console.log(details);
 
     if (!validatePassword(details.password)) {
       setPasswordError(
@@ -45,16 +28,6 @@ const Register = () => {
     } else {
       setPasswordError("");
     }
-  };
-
-  const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-  };
-
-  const validatePhone = (phone) => {
-    const regex = /^[0-9]{10}$/;
-    return regex.test(phone);
   };
 
   const validatePassword = (password) => {
@@ -66,73 +39,37 @@ const Register = () => {
   return (
     <div>
       <div className=" h-[668px]">
-        <div className="w-96 h-full bg-orange-400  m-auto     ">
-          <p className="text-white text-3xl text-center pt-14 pb-4">Register</p>
+        <div className="w-96 h-full bg-orange-400   m-auto    ">
+          <p className="text-white text-3xl text-center pt-14 pb-4">Login</p>
           <div className="bg-white left rounded-t-3xl border     ">
             <p className="p-6 text-orange-500  text-2xl  ">
-              Hello! Register to get started
+              Welcome back! Glad to See You, Again!
             </p>
             <center>
               <form action="" onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  placeholder="Full name"
-                  value={setDetails.fullname}
-                  onChange={handleChange}
-                  name="fullname"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
-                />
-                <input
-                  type="text"
-                  placeholder="Email"
-                  value={setDetails.email}
-                  onChange={handleChange}
-                  name="email"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
-                />
-                {emailError && (
-                  <p className="text-red-500 text-xs absolute  ml-4">
-                    {emailError}
-                  </p>
-                )}
-
-                <input
-                  type="text"
-                  placeholder="Phone No"
                   value={setDetails.phoneno}
                   onChange={handleChange}
+                  placeholder="Phone no, email or username"
                   name="phoneno"
                   className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
                 />
-                {phoneError && (
-                  <p className="text-red-500 text-xs absolute  ml-4  ">
-                    {phoneError}
-                  </p>
-                )}
                 <input
                   type="text"
-                  placeholder="Password"
                   value={setDetails.password}
                   onChange={handleChange}
+                  placeholder="Password"
                   name="password"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100  mt-2 rounded-md "
+                  className="border  w-[350px] p-2 m-auto bg-gray-100  mt-4 rounded-md "
                 />
                 {passwordError && (
                   <p className="text-red-500 text-xs   ml-4">{passwordError}</p>
                 )}
-
-                <input
-                  type="text"
-                  placeholder="Verification Code"
-                  value={setDetails.vcode}
-                  onChange={handleChange}
-                  name="vcode"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
-                />
-                <Link href="/details">
-                  <button className="bg-orange-500 w-[350px] p-2 m-auto mt-8 rounded-md text-white ">
-                    Register
-                  </button>
+<Link href='/homepage'>
+                <button className="bg-orange-500 w-[350px] p-2 m-auto mt-6 rounded-md text-white ">
+                  Login
+                </button>
                 </Link>
               </form>
               <p className="text-xs mt-2">
@@ -143,7 +80,7 @@ const Register = () => {
                 <p className="text-sm">or Register with</p>
                 <div className="border bg-gray-200 w-32 h-0 mt-3 m-2"></div>
               </div>
-              <button className="border w-[350px] p-2 m-auto mt-7 rounded-md  ">
+              <button className="border w-[350px] p-2 m-auto mt-6 rounded-md text-white  ">
                 <center>
                   <svg
                     width="32"
@@ -179,10 +116,10 @@ const Register = () => {
                   </svg>
                 </center>
               </button>
-              <p className="text-sm  mb-2   ">
-                Already have an account?{" "}
-                <Link href="login">
-                  <span className="text-orange-500">Login</span>{" "}
+              <p className="text-sm mt-28 mb-2   ">
+                Don't have an account?{" "}
+                <Link href="/registerverify">
+                <span className="text-orange-500">Register</span>{" "}
                 </Link>
               </p>
             </center>
@@ -193,4 +130,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

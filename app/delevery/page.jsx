@@ -23,14 +23,17 @@ const Delevery = () => {
           </p>
           <div className="bg-white left rounded-t-3xl border border-white ">
             <div className=" h-10 mt-8 flex justify-between  ">
-          
-<div></div>
+              <div></div>
               <FaUserCircle className="text-orange-500 mr-3 w-[50px] h-[50px]" />
             </div>
 
             <div className=" w-96  mt-3     ">
               <div className="h-48 border w-full rounded-2xl m-auto ">
-                <img src="https://www.thestatesman.com/wp-content/uploads/2020/04/googl_ED.jpg" alt="" className="h-full w-full rounded-2xl" />
+                <img
+                  src="https://www.thestatesman.com/wp-content/uploads/2020/04/googl_ED.jpg"
+                  alt=""
+                  className="h-full w-full rounded-2xl"
+                />
               </div>
 
               <div className=" p-2  m-auto  text-xs w-[370px]    ">
@@ -40,15 +43,17 @@ const Delevery = () => {
                 </div>
 
                 <div className="flex justify-between mt-1 ">
-                  <p className="text-xs">24 Pragati Nagar, near c12 mall nanakhed Ujjain</p>
-                  <p className="pl-20 text-xs ">24 Pragati Nagar, near c12 mall nanakhed Ujjain
+                  <p className="text-xs">
+                    24 Pragati Nagar, near c12 mall nanakhed Ujjain
+                  </p>
+                  <p className="pl-20 text-xs ">
+                    24 Pragati Nagar, near c12 mall nanakhed Ujjain
                   </p>
                 </div>
               </div>
 
-              <div className="mt-2 border w-[350px] m-auto"></div> 
+              <div className="mt-2 border w-[350px] m-auto"></div>
               <div className="flex justify-around mt-1 ">
-              
                 <button className=" shadow-md rounded-2xl text-sm   flex px-7 mt-2 p-1    ">
                   <span className="mt-1 mr-2 ">
                     <MdCall />
@@ -57,21 +62,18 @@ const Delevery = () => {
                 </button>
                 <button className=" shadow-md rounded-2xl text-sm      flex px-3 mt-2 p-1    ">
                   <span className="mt-1 mr-2 ">
-                  <BsChat />
+                    <BsChat />
                   </span>
-                Chat with Vendor
+                  Chat with Vendor
                 </button>
-
-            
               </div>
               {/* <div className="mt-2 border w-[350px] m-auto"></div>  */}
             </div>
             <div className=" text-orange-500 border mt-2 shadow-orange-500   ">
               <center>
-              <TfiAngleDoubleUp className="mt-2 text-2xl " />
-              <p className="pt-1">Product Verification</p>
+                <TfiAngleDoubleUp className="mt-2 text-2xl " />
+                <p className="pt-1">Product Verification</p>
               </center>
-         
             </div>
 
             <div className="   ">

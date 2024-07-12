@@ -1,6 +1,6 @@
-"use client"
-import React,{useState} from 'react'
-
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 const RegisterVerify = () => {
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
@@ -11,7 +11,6 @@ const RegisterVerify = () => {
     email: "",
     phoneno: "",
     password: "",
-
   });
 
   const handleChange = (event) => {
@@ -37,7 +36,9 @@ const RegisterVerify = () => {
     }
 
     if (!validatePassword(details.password)) {
-      setPasswordError("Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number");
+      setPasswordError(
+        "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number"
+      );
     } else {
       setPasswordError("");
     }
@@ -54,62 +55,73 @@ const RegisterVerify = () => {
   };
 
   const validatePassword = (password) => {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*()=?]{8,}$/;
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*()=?]{8,}$/;
     return regex.test(password);
   };
 
-  
   return (
     <div>
-      <div className=" h-[668px]">
-        <div className="w-96 h-full bg-orange-400      ">
+      <div className=" h-[668px] ">
+        <div className="w-96 h-full bg-orange-400 m-auto     ">
           <p className="text-white text-3xl text-center pt-14 pb-4">Register</p>
           <div className="bg-white left rounded-t-3xl border     ">
             <p className="p-6 text-orange-500  text-2xl  ">
               Hello! Register to get started
             </p>
             <center>
-              <form action=""  onSubmit={handleSubmit}>
-              <input
+              <form action="" onSubmit={handleSubmit}>
+                <input
                   type="text"
                   placeholder="Full name"
-                  value={setDetails.fullname} 
+                  value={setDetails.fullname}
                   onChange={handleChange}
-                  name='fullname'
+                  name="fullname"
                   className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
                 />
                 <input
                   type="text"
                   placeholder="Email"
-                  value={setDetails.email} 
+                  value={setDetails.email}
                   onChange={handleChange}
-                  name='email'
+                  name="email"
                   className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
                 />
-               {emailError && <p className="text-red-500 text-xs absolute  ml-4">{emailError}</p>}
+                {emailError && (
+                  <p className="text-red-500 text-xs absolute  ml-4">
+                    {emailError}
+                  </p>
+                )}
 
                 <input
                   type="text"
                   placeholder="Phone No"
-                  value={setDetails.phoneno} 
+                  value={setDetails.phoneno}
                   onChange={handleChange}
-                  name='phoneno'
+                  name="phoneno"
                   className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
                 />
-                 {phoneError && <p className="text-red-500 text-xs absolute  ml-4  ">{phoneError}</p>}
+                {phoneError && (
+                  <p className="text-red-500 text-xs absolute  ml-4  ">
+                    {phoneError}
+                  </p>
+                )}
                 <input
                   type="password"
                   placeholder="Password"
-                  value={setDetails.password} 
+                  value={setDetails.password}
                   onChange={handleChange}
-                  name='password'
+                  name="password"
                   className="border  w-[350px] p-2 m-auto bg-gray-100  mt-2 rounded-md "
                 />
-                {passwordError && <p className="text-red-500 text-xs   ml-4">{passwordError}</p>}
-
-                <button className="bg-orange-500 w-[350px] p-2 m-auto mt-8 rounded-md text-white ">
-                  Verify
-                </button>
+                {passwordError && (
+                  <p className="text-red-500 text-xs   ml-4">{passwordError}</p>
+                )}
+                <Link href="/register">
+                  <button className="bg-orange-500 w-[350px] p-2 m-auto mt-8 rounded-md text-white ">
+                    Verify
+                  </button>
+                </Link>
               </form>
               <p className="text-xs mt-2">
                 Forgot your login details? <b>Get help logging in</b>{" "}

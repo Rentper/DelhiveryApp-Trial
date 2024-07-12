@@ -2,96 +2,35 @@ import React from "react";
 import Header from "../header/page";
 import Footer from "../footer/page";
 import Link from "next/link";
-const Confirm = () => {
+const ConfirmOrder = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">
-    <div className=" ">
-      <Header />
-      <div className=" mt-3  scroll-auto overflow-y-auto    h-[390px] 	 ">
-      <div className="mt-6 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-xs w-[370px]   ">
-        <div className="flex justify-between text-gray-400 text-xs ">
-          <p>PICK UP </p>
-          <p className="w-22 float-left ">MONEY EARNED</p>
+      <div className=" ">
+        <Header />
+        <center className=" mt-10  scroll-auto overflow-y-auto rounded-md     h-[280px] w-[320px] m-auto	shadow-[0_0px_5px_rgba(0,0,0,0.25)] ">
+          <img src="/images/tyre.png" alt="tyre image" className="mt-4" />
+          <p className="w-64 text-sm">
+            <span className="text-red-500">Please confirm</span>: Do you have a
+            vehicle available for transportation, and is it suitable for carring
+            parcels?
+          </p>
+          <div className="mt-14">
+            <button className="bg-orange-500  rounded-md text-white  px-14 mr-2    ">
+              Yes
+            </button>
+            <Link href="/order">
+              <button className="bg-orange-500  rounded-md text-white  px-14 ml-2    ">
+                No
+              </button>
+            </Link>
+          </div>
+        </center>
+        <div className="mt-24">
+          <Footer />
         </div>
-
-        <div className="flex justify-between mt-1">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className="pl-20 ">INR 500</p>
-        </div>
-        <div className="flex justify-between text-gray-400 mt-3">
-          <p>DROP OFF </p>
-          <p  className="w-22  text-xs">TOTAL DISTANCE</p>
-        </div>
-
-        <div className="flex justify-between ">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className=" pl-20">10.5km</p>
-        </div>
-        <button className="text-gray-400  ml-52 text-md font-semibold ">Reject</button>
-<Link href="/delevery">
-<button className="bg-orange-400 float-end   rounded-md text-white pl-4 pr-4 ">Accept</button>
-</Link>
       </div>
-
-   
-{/* repeat all bolck only for design  */}
-      <div className="mt-3 bg-gray-100 p-2 shadow-md rounded-md  text-xs  w-[370px] m-auto  ">
-        <div className="flex justify-between text-gray-400 text-xs ">
-          <p>PICK UP </p>
-          <p className="w-22 float-left ">MONEY EARNED</p>
-        </div>
-
-        <div className="flex justify-between mt-1">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className="pl-20 ">INR 500</p>
-        </div>
-        <div className="flex justify-between text-gray-400 mt-3">
-          <p>DROP OFF </p>
-          <p  className="w-22  text-xs">TOTAL DISTANCE</p>
-        </div>
-
-        <div className="flex justify-between ">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className=" pl-20">10.5km</p>
-        </div>
-        <button className="text-gray-400  ml-52 text-md font-semibold ">Reject</button>
-        <button className="bg-orange-400 float-end   rounded-md text-white pl-4 pr-4 ">Accept</button>
-      </div>
-      <div className="mt-3 bg-gray-100 p-2 shadow-xl rounded-md  text-xs  w-[370px] m-auto  ">
-        <div className="flex justify-between text-gray-400 text-xs ">
-          <p>PICK UP </p>
-          <p className="w-22 float-left ">MONEY EARNED</p>
-        </div>
-
-        <div className="flex justify-between mt-1">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className="pl-20 ">INR 500</p>
-        </div>
-        <div className="flex justify-between text-gray-400 mt-3">
-          <p>DROP OFF </p>
-          <p  className="w-22  text-xs">TOTAL DISTANCE</p>
-        </div>
-
-        <div className="flex justify-between ">
-          <p>24 Pragati Nagar ,near c12 mall nanakhed Ujjain</p>
-          <p className=" pl-20">10.5km</p>
-        </div>
-        <button className="text-gray-400  ml-52 text-md font-semibold ">Reject</button>
-        <button className="bg-orange-400 float-end   rounded-md text-white pl-4 pr-4 ">Accept</button>
-      </div>
-      </div>
-      <Footer  />
-
-      
-    </div>
-
     </div>
   );
 };
 
-export default Confirm;
-
-
-
-
-
+export default ConfirmOrder;

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
-import Footer from '../deleveryapp/Footer'
+import Footer from '../footer/page'
 import Link from "next/link";
 const Homepage = () => {
   const [checked, setChecked] = useState(false);
@@ -11,7 +11,7 @@ const Homepage = () => {
   };
   return (
     <>
-      <div className="bg-white h-[667px] border w-96">
+      <div className="bg-white h-[668px] border w-96 mx-auto">
         <div className="w-full h-full  bg-orange-400    ">
           <p className="text-white text-3xl text-center pt-14 pb-4"> Welcome</p>
           <div className="bg-white left rounded-t-3xl border border-white ">
