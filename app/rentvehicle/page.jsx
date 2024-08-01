@@ -3,7 +3,7 @@ import Footer from "../footer/page";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 Link
-const Confirm = () => {
+const RentVehicle = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">
       <div className=" ">
@@ -12,9 +12,9 @@ const Confirm = () => {
             {" "}
             Payments
           </p>
-          <div className="bg-white left rounded-t-3xl border border-white ">
-            <div className=" h-10 mt-8 flex justify-between">
-              <div className="  p-1.5  w-12 h-12 ml-4">
+          <div className="bg-white left rounded-t-3xl border border-b-0 border-l-0 ">
+            <div className=" h-10 mt-8 flex justify-between  ">
+              <div className="  p-1.5  w-12 h-12 ml-4 ">
                 <svg
                   width="50"
                   height="50"
@@ -38,57 +38,52 @@ const Confirm = () => {
                   />
                 </svg>
               </div>
-              <FaUserCircle className="text-orange-500 mr-3 w-[50px] h-[50px]" />
+              <div className="flex">
+              <div className=" w-10 h-10 mr-4 ">
+              <img src="/images/motorbike-scooter.png" alt="" className="w-full h-full" />
+              </div>
+              <div className=" w-10 h-10 mr-4 ">
+              <img src="/images/auto.png" alt="" className="w-full h-full" />
+              </div>
+              <div className=" w-10 h-10 mr-2">
+              <img src="/images/truck.png" alt="" className="w-full h-full" />
+              </div>
+              </div>
+           
             </div>
           </div>
         </div>
 
         <div className="flex flex-nowrap overflow-x-auto mt-4">
           <div className="flex flex-nowrap">
-            <div className="w-32 h-32 border rounded-xl mr-2 ml-2">
-              <img src="/images/rider.png" alt="" />
+            <div className="w-52 h-32 border rounded-xl mr-2 ml-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)] p-1">
+              <img src="/images/scooty.png" alt="" className="rounded-xl w-full h-full" />
             </div>
-
-            <div className="w-32 h-32 border rounded-xl mr-2">
-              <img src="/images/rider.png" alt="" />
+            <div className="w-52 h-32 border rounded-xl mr-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)] p-1">
+            <img src="/images/scooty.png" alt="" className="rounded-xl w-full h-full" />
             </div>
-            <div className="w-32 h-32 border rounded-xl mr-2">
-              <img src="/images/rider.png" alt="" />
+            <div className="w-52 h-32 border rounded-xl mr-2 shadow-[0_0px_5px_rgba(0,0,0,0.25)] p-1">
+            <img src="/images/scooty.png" alt="" className="rounded-xl w-full h-full" />
             </div>
-            <div className="w-32 h-32 border rounded-xl mr-2">
-              <img src="/images/rider.png" alt="" />
-            </div>
+           
           </div>
         </div>
 
-        <div className="   scroll-auto overflow-y-auto    h-[390px] 	 ">
-          <div className="mt-6 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product has been inspected and free from any visible damage
-            </p>
-          </div>
-          <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product matches the description and specifications provided in
-              the order
-            </p>
-          </div>
-          <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product package includes all necessary parts and accessories
-              as listed
-            </p>
-          </div>
-          <Link href='pickupsuccessfully'>
-          <button className="bg-orange-500 rounded-md text-white p-0.5 mt-5 text-center ml-32 px-4  ">
-            Product Verified{" "}
+        <form className="scroll-auto overflow-y-auto  h-[260px] border text-center shadow-[0_0px_5px_rgba(0,0,0,0.25)] m-2	 ">
+         <p className="text-orange-500 mt-2 mb-2 text-center">Vehicle Details</p>
+         <input type="text" placeholder="Vehicle no" className="border p-0.5 bg-gray-200  w-[350px] rounded-md " />
+         <input type="text" placeholder="Vehicle model" className="border p-0.5 bg-gray-200  w-[350px] rounded-md mt-2 mb-4" />
+ 
+ <p className=""> <span className="text-red-600 font-semibold  "> Vehicle Charge </span> ₹ 500</p>
+ <p className="text-gray-500 text-xs w-80 m-auto">If you are renting this vehicle, Please note that the the rental amount will be deducted from your salary</p>
+ <Link href='delevery'>
+ <button className="bg-orange-500 rounded-md text-white p-0.5 px-10 mt-10 text-center  ">
+          Rent vehicle{" "}
           </button>
-          </Link>
-        </div>
-        <div className="mt-[-128px]">
+ </Link>
+         
+        </form>
+        <div className="mt-[-6px]">
           <Footer />
         </div>
       </div>
@@ -96,4 +91,4 @@ const Confirm = () => {
   );
 };
 
-export default Confirm;
+export default RentVehicle;

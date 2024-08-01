@@ -8,7 +8,7 @@ const TakeOrder = () => {
       <div className=" ">
         <Header />
         <div className=" mt-3  scroll-auto overflow-y-auto    h-[360px] 	 ">
-          <div className="border mt-2 p-1  shadow-[0_0px_5px_rgba(0,0,0,0.25)] rounded-md m-auto  text-xs w-[370px] flex  ">
+          <div className="border mt-3 p-1  shadow-[0_0px_5px_rgba(0,0,0,0.25)] rounded-md m-auto  text-xs w-[370px] flex  ">
             <div className="w-64">
               <p className="text-gray-400 text-xs">Pick up</p>
               <p>24 Pragati nagar, near c21 mall nanakheda Ujjain </p>

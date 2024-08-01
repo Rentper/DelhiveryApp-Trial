@@ -32,6 +32,7 @@ const Header = () => {
               </div>
             </label>
 
+
             <FaUserCircle className="text-orange-500 mr-3 w-[50px] h-[50px]" />
             
           </div>

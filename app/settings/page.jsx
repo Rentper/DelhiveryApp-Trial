@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Footer from "../footer/page";
 import { CiSearch } from "react-icons/ci";
+import Link from "next/link";
 const Settings = () => {
   const [checked, setChecked] = useState(false);
   const handleToggle = () => {
@@ -28,6 +29,7 @@ const Settings = () => {
                 />
               </div>
               <div className="flex justify-around mt-6">
+              <Link href='/account'>
                 <svg
                   width="23"
                   height="26"
@@ -44,9 +46,11 @@ const Settings = () => {
                     fill="#ACACAC"
                   />
                 </svg>
-
+                </Link>
                 <p className="mr-16 mt-2 ml-[-72px]">Account</p>
                 <div className="mt-2">
+              
+
                   <svg
                     width="11"
                     height="20"
@@ -62,6 +66,7 @@ const Settings = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
+               
                 </div>
               </div>
               <hr className="w-80 m-auto mt-4" />
