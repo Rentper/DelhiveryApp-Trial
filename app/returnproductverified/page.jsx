@@ -2,8 +2,8 @@ import React from "react";
 import Footer from "../footer/page";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
-Link
-const ProductVerified = () => {
+Link;
+const ReturnProductVerified = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">
       <div className=" ">
@@ -61,39 +61,29 @@ const ProductVerified = () => {
           </div>
         </div>
 
-        <div className="   scroll-auto overflow-y-auto    h-[390px] 	 ">
+        <div className="  scroll-auto overflow-y-auto    h-[390px] 	 ">
           <div className="mt-6 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product has been inspected and free from any visible damage
-            </p>
+            <input name="product" type="radio" className="w-6 mr-4" />
+            <p>The product is in good condition and works as expected.</p>
           </div>
           <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product matches the description and specifications provided in
-              the order
-            </p>
+            <input name="product" type="radio" className="w-6 mr-4" />
+            <p>The product is damaged or defective.</p>
           </div>
-          <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
-            <input type="checkbox" className="w-6 mr-4" />
-            <p>
-              The product package includes all necessary parts and accessories
-              as listed
-            </p>
-          </div>
-          <Link href='pickupsuccessfully'>
-          <button className="bg-orange-500 rounded-md text-white p-0.5 mt-5 text-center ml-32 px-4  ">
-            Product Verified{" "}
-          </button>
+
+          <Link href="returnpickup">
+            <button className="bg-orange-500 rounded-md text-white p-0.5 mt-5 text-center ml-32 px-4  ">
+              Product Verified{" "}
+            </button>
           </Link>
         </div>
-        <div className="mt-[-128px]">
+      
+      </div>
+      <div className="mt-[-128px]">
           <Footer />
         </div>
-      </div>
     </div>
   );
 };
 
-export default ProductVerified;
+export default ReturnProductVerified;

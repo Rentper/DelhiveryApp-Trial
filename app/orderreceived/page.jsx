@@ -7,7 +7,7 @@ import { BsChat } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
 import { TfiAngleDoubleUp } from "react-icons/tfi";
 
-const OrderDelevered = () => {
+const OrderReceived = () => {
   const [checked, setChecked] = useState(false);
 
   const handleToggle = () => {
@@ -48,7 +48,7 @@ const OrderDelevered = () => {
             </div>
 
             <div className=" p-2  m-auto  text-xs w-[370px]  h-[191px] mt-2 scroll-auto overflow-y-auto     ">
-
+           
                 <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle mt-[-6px]">
                 <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span>
                 <p className="text-gray-400  w-52 truncate ">
@@ -81,9 +81,9 @@ const OrderDelevered = () => {
               </div>
             </div> 
             
-            <Link href="/outofdelevery">
+            <Link href="/availabledelevery">
               <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-24 mt-1 text-white text-sm  ">
-              Order delevered
+              Order received
               </button>
             </Link>
             <p className="text-gray-400 text-xs text-center pt-1">
@@ -100,4 +100,4 @@ const OrderDelevered = () => {
   );
 };
 
-export default OrderDelevered;
+export default OrderReceived;

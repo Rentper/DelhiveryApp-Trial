@@ -1,17 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import Footer from "../footer/page";
 import Link from "next/link";
 import { BsChat } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
-import { TfiAngleDoubleUp } from "react-icons/tfi";
 
 const Delevery = () => {
   const [checked, setChecked] = useState(false);
-
-  const [currentIndex, setCurrentIndex] = useState(null);
-  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleClick = (index) => {
     setSelectedIndex(index);
@@ -56,82 +51,19 @@ const Delevery = () => {
             </div>
 
             <div className=" p-2  m-auto  text-xs w-[370px]  h-[191px] mt-2 scroll-auto overflow-y-auto     ">
-              <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle ">
-                {/* <span className=" w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span> */}
-                <span
-              className={
-                selectedIndex === 0
-                  ? 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-white border-orange-500 border-4 font-medium text-white rounded-full'
-                  : 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray rounded-full'
-              }
-              style={{ backgroundColor: selectedIndex === 0 ? 'white' : ' #FF7200' }}
-              onClick={() => handleClick(0)}
-            >
-            </span>
-                <p className="text-gray-400">pickup successfully</p>
-              </div>
-              <div className="flex">
-                <div className=" ml-1.5 h-12  w-0  border border-gray-500 mt-[-7px] "></div>
-                <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
-              </div>
-
               <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle mt-[-6px]">
-                {/* <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span> */}
-                <span
-              className={
-                selectedIndex === 1
-                  ? 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-white border-orange-500 border-4 font-medium text-white rounded-full'
-                  : 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray rounded-full'
-              }
-              style={{ backgroundColor: selectedIndex === 1 ? 'white' : ' #FF7200' }}
-              onClick={() => handleClick(1)}
-            >
-            </span>
+                <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span>
+
                 <p className="text-gray-400  w-52 truncate ">
-                  24 pragati nagar, near c21 mall nakhed ujjaian {" "}
+                  24 pragati nagar, near c21 mall nakhed ujjaian{" "}
                 </p>
-                <div className=" h-8 w-32 ml-1 pl-12" >
-                <p className="text-[10px] text-gray-500">Order id </p>
-                <p>#788927200</p>
+                <div className=" h-8 w-32 ml-1 pl-12">
+                  <p className="text-[10px] text-gray-500">Order id </p>
+                  <p>#788927200</p>
                 </div>
               </div>
               <div className="flex">
-                <div className=" ml-1.5 h-12  w-0  border border-gray-500 mt-[-7px] "></div>
                 <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
-              </div>
-
-              <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle  mt-[-6px]">
-                {/* <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span> */}
-                <span
-              className={
-                selectedIndex === 2
-                  ? 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-white border-orange-500 border-4 font-medium text-white rounded-full'
-                  : 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray rounded-full'
-              }
-              style={{ backgroundColor: selectedIndex === 2 ? 'white' : ' #FF7200' }}
-              onClick={() => handleClick(2)}
-            >
-            </span>
-                <p className="text-gray-400">delevery</p>
-              </div>
-              <div className="flex">
-                <div className=" ml-1.5 h-12  w-0  border border-gray-500 mt-[-7px] "></div>
-                <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
-              </div>
-
-              <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle  mt-[-6px]">
-                {/* <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span> */}
-                <span
-              className={
-                selectedIndex === 3
-                  ? 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-white border-orange-500 border-4 font-medium text-white rounded-full'
-                  : 'w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray rounded-full'
-              }
-              style={{ backgroundColor: selectedIndex === 3 ? 'white' : ' #FF7200' }}
-              onClick={() => handleClick(3)}
-            >
-            </span>
-                <p className="text-gray-400">delevered successfully</p>
               </div>
             </div>
             <Link href="/productverification">

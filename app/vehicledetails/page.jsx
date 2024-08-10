@@ -3,7 +3,7 @@ import Footer from "../footer/page";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 Link
-const RentVehicle = () => {
+const VehicleDetails = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">
       <div className=" ">
@@ -74,11 +74,10 @@ const RentVehicle = () => {
          <input type="text" placeholder="Vehicle no" className="border p-0.5 bg-gray-200  w-[350px] rounded-md " />
          <input type="text" placeholder="Vehicle model" className="border p-0.5 bg-gray-200  w-[350px] rounded-md mt-2 mb-4" />
  
- <p className=""> <span className="text-red-600 font-semibold  "> Vehicle Charge </span> ₹ 500</p>
- <p className="text-gray-500 text-xs w-80 m-auto">If you are renting this vehicle, Please note that the the rental amount will be deducted from your salary</p>
+ 
  <Link href='delevery'>
  <button className="bg-orange-500 rounded-md text-white p-0.5 px-10 mt-10 text-center  ">
-          Rent vehicle{" "}
+        Next{" "}
           </button>
  </Link>
          
@@ -91,4 +90,4 @@ const RentVehicle = () => {
   );
 };
 
-export default RentVehicle;
+export default VehicleDetails;

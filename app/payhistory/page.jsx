@@ -1,5 +1,3 @@
-
-
 "use client";
 import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
@@ -110,11 +108,9 @@ const Payments = () => {
               </div>
             </div>
             <div className="bg-white mt-8  ">
-            <Footer />
+              <Footer />
+            </div>
           </div>
-          </div>
-
-         
         </div>
       </div>
     </>

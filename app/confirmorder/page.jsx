@@ -15,12 +15,12 @@ const ConfirmOrder = () => {
             parcels?
           </p>
           <div className="mt-14">
-          <Link href="/delevery">
+          <Link href="/vehicledetails">
             <button className="bg-orange-500  rounded-md text-white  px-14 mr-2    ">
               Yes
             </button>
             </Link>
-            <Link href="/rentvehicle">
+            <Link href="https://www.rentper.org/c/vechicle?page=1">
               <button className="bg-orange-500  rounded-md text-white  px-14 ml-2    ">
                 No
               </button>

@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import Footer from "../footer/page";
 import Link from "next/link";
 import { BsChat } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
-import { TfiAngleDoubleUp } from "react-icons/tfi";
 
-const OrderDelevered = () => {
+const ReturnPickup = () => {
   const [checked, setChecked] = useState(false);
 
   const handleToggle = () => {
@@ -48,7 +46,7 @@ const OrderDelevered = () => {
             </div>
 
             <div className=" p-2  m-auto  text-xs w-[370px]  h-[191px] mt-2 scroll-auto overflow-y-auto     ">
-
+         
                 <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle mt-[-6px]">
                 <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span>
                 <p className="text-gray-400  w-52 truncate ">
@@ -60,39 +58,20 @@ const OrderDelevered = () => {
                 </div>
               </div>
               <div className="flex">
-              <div className=" ml-1.5 h-12  w-0  border border-gray-500 mt-[-7px] "></div>
-                <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
-              </div>
-              <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle  mt-[-6px]">
-                <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span>
-                <p className="text-gray-400">Picked up Successfully</p>
-              </div>
-              <div className="flex">
-              <div className=" ml-1.5 h-12  w-0  border border-gray-500 mt-[-7px] "></div>
-                <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
-              </div>
-              
-              <div className="min-w-[28px] min-h-[28px] flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle  mt-[-6px]">
-                <span className="w-3.5 h-3.5 flex justify-center items-center flex-shrink-0 bg-orange-500 font-medium text-gray-800 rounded-full dark:bg-gray-700 dark:text-white"></span>
-                <p className="text-gray-400">Delevery on the way</p>
-              </div>
-              <div className="flex">
                 <div className=" mt-3 md:w-full h-px md:flex-1 bg-gray-200 group-last:hidden dark:bg-gray-700"></div>
               </div>
             </div> 
             
-            <Link href="/outofdelevery">
-              <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-24 mt-1 text-white text-sm  ">
-              Order delevered
+            <Link href="/returndeleveryontheway">
+              <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-16 mt-1 text-white text-sm  ">
+              return Pick up successfully
               </button>
             </Link>
             <p className="text-gray-400 text-xs text-center pt-1">
               Report issue
             </p>
-            <div className="   ">
               <Footer />
-            </div>
-            <div></div>
+           
           </div>
         </div>
       </div>
@@ -100,4 +79,4 @@ const OrderDelevered = () => {
   );
 };
 
-export default OrderDelevered;
+export default ReturnPickup;
