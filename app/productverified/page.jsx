@@ -68,7 +68,7 @@ const ProductVerified = () => {
               The product has been inspected and free from any visible damage
             </p>
           </div>
-          <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
+          {/* <div className="mt-2 bg-gray-100 p-2 shadow-md rounded-md m-auto  text-sm w-[370px] flex   ">
             <input type="checkbox" className="w-6 mr-4" />
             <p>
               The product matches the description and specifications provided in
@@ -81,7 +81,7 @@ const ProductVerified = () => {
               The product package includes all necessary parts and accessories
               as listed
             </p>
-          </div>
+          </div> */}
           <Link href='pickupsuccessfully'>
           <button className="bg-orange-500 rounded-md text-white p-0.5 mt-5 text-center ml-32 px-4  ">
             Product Verified{" "}

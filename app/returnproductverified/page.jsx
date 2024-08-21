@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../footer/page";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
-Link;
+
 const ReturnProductVerified = () => {
   return (
     <div className=" h-[668px] border w-96 m-auto ">

@@ -69,7 +69,7 @@ const ReturnProductVerification = () => {
               <Link href="/returnproductverified">
                 <TfiAngleDoubleUp className="text-4xl pt-2 " />
               </Link>
-              <p className="text-xs text-center pt-1">Return Product verification</p>
+              <p className="text-xs text-center pt-1"> Product verification</p>
             </center>
 
             <div className="mt-[-8px]   ">

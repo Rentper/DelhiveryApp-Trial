@@ -4,6 +4,7 @@ import Footer from "../footer/page";
 import Link from "next/link";
 import { BsChat } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
+import Location from '../location/Location'
 
 const Delevery = () => {
   const [checked, setChecked] = useState(false);
@@ -32,6 +33,7 @@ const Delevery = () => {
                   alt=""
                   className="h-full w-full rounded-t-2xl"
                 />
+                {/* <Location /> */}
               </div>
 
               <div className="flex justify-around mt-1 ">

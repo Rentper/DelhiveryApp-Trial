@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import Footer from "../footer/page";
 import Link from "next/link";
 import { BsChat } from "react-icons/bs";
 import { MdCall } from "react-icons/md";
-import { TfiAngleDoubleUp } from "react-icons/tfi";
 
 const OrderReceived = () => {
   const [checked, setChecked] = useState(false);
@@ -81,7 +79,7 @@ const OrderReceived = () => {
               </div>
             </div> 
             
-            <Link href="/availabledelevery">
+            <Link href="/vendorproductverified">
               <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-24 mt-1 text-white text-sm  ">
               Order received
               </button>

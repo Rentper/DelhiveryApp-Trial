@@ -197,7 +197,7 @@ const TakeReturnOrder = () => {
         <center className="">
           <Link href="/returndelevery">
             <button className="bg-orange-500  rounded-md text-white p-1 px-5    ">
-              Take return order
+              Take 
             </button>
           </Link>
         </center>

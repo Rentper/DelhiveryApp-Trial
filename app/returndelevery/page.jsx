@@ -68,7 +68,7 @@ const ReturnDelevery = () => {
             </div>
             <Link href="/returnproductverification">
               <button className="bg-orange-500 p-0.5 px-12 rounded-md ml-24 text-white text-sm mt-3  ">
-                Go to pickup return
+                Go to pickup 
               </button>
             </Link>
             <p className="text-gray-400 text-xs text-center pt-1">

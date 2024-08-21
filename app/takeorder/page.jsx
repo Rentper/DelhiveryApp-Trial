@@ -286,7 +286,7 @@ const TakeOrder = () => {
           </div>
         </div>
         <center className="">
-          <Link href="/confirmorder">
+          <Link href="/delevery">
             <button className="bg-orange-500  rounded-md text-white p-1 px-5    ">
               Take
             </button>

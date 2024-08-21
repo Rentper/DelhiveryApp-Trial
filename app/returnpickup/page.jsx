@@ -63,8 +63,8 @@ const ReturnPickup = () => {
             </div> 
             
             <Link href="/returndeleveryontheway">
-              <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-16 mt-1 text-white text-sm  ">
-              return Pick up successfully
+              <button className="bg-orange-500 p-0.5 px-8 rounded-md ml-20 mt-1 text-white text-sm  ">
+               Pick up successfully
               </button>
             </Link>
             <p className="text-gray-400 text-xs text-center pt-1">
