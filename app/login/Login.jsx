@@ -2,13 +2,17 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import axios from "axios";
+
 const Login = () => {
-const router =useRouter();
+  const router = useRouter();
   const [passwordError, setPasswordError] = useState("");
   const [details, setDetails] = useState({
     phoneno: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState(false); // For handling loading state
+  const [error, setError] = useState(""); // For handling API errors
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,16 +21,40 @@ const router =useRouter();
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(details);
 
+    // Validate password
     if (!validatePassword(details.password)) {
       setPasswordError(
         "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number"
       );
+      return; // Prevent form submission if password is invalid
     } else {
       setPasswordError("");
+    }
+
+    setIsLoading(true); // Show loading spinner or button disable during the API call
+
+    try {
+      // API call to login
+      const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', {
+        phoneno: details.phoneno,
+        password: details.password,
+      });
+
+      if (response.status === 200) {
+        // On successful login, redirect to homepage or another page
+        router.push('/homepage');
+      }
+    } catch (error) {
+      setIsLoading(false);
+      // Handle API errors, e.g., incorrect credentials
+      if (error.response) {
+        setError(error.response.data.message || "Something went wrong, please try again.");
+      } else {
+        setError("Network error, please check your connection.");
+      }
     }
   };
 
@@ -38,49 +66,52 @@ const router =useRouter();
 
   return (
     <div>
-      <div className=" h-[668px]">
-        <div className="w-96 h-full bg-orange-400   m-auto    ">
+      <div className="h-[668px]">
+        <div className="w-96 h-full bg-orange-400 m-auto">
           <p className="text-white text-3xl text-center pt-14 pb-4">Login</p>
-          <div className="bg-white left rounded-t-3xl border     ">
-            <p className="p-6 text-orange-500  text-2xl  ">
-              Welcome back! Glad to See You, Again!
-            </p>
+          <div className="bg-white left rounded-t-3xl border">
+            <p className="p-6 text-orange-500 text-2xl">Welcome back! Glad to See You, Again!</p>
             <center>
               <form action="" onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  value={setDetails.phoneno}
+                  value={details.phoneno}
                   onChange={handleChange}
                   placeholder="Phone no, email or username"
                   name="phoneno"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md"
+                  className="border w-[350px] p-2 m-auto bg-gray-100 mt-2 rounded-md"
                 />
                 <input
-                  type="text"
-                  value={setDetails.password}
+                  type="password"
+                  value={details.password}
                   onChange={handleChange}
                   placeholder="Password"
                   name="password"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100  mt-4 rounded-md "
+                  className="border w-[350px] p-2 m-auto bg-gray-100 mt-4 rounded-md"
                 />
                 {passwordError && (
-                  <p className="text-red-500 text-xs   ml-4">{passwordError}</p>
+                  <p className="text-red-500 text-xs ml-4">{passwordError}</p>
                 )}
-<Link href='/homepage'>
-                <button className="bg-orange-500 w-[350px] p-2 m-auto mt-6 rounded-md text-white ">
-                  Login
+                {error && (
+                  <p className="text-red-500 text-xs ml-4">{error}</p>
+                )}
+                <button
+                  type="submit"
+                  className="bg-orange-500 w-[350px] p-2 m-auto mt-6 rounded-md text-white"
+                  disabled={isLoading} // Disable button while loading
+                >
+                  {isLoading ? "Loading..." : "Login"}
                 </button>
-                </Link>
               </form>
               <p className="text-xs mt-2">
-                Forgot your login details? <b>Get help logging in</b>{" "}
+                Forgot your login details? <b>Get help logging in</b>
               </p>
               <div className="flex mt-4">
                 <div className="border bg-gray-200 w-28 h-0 mt-3 m-2"></div>
                 <p className="text-sm">or Register with</p>
                 <div className="border bg-gray-200 w-32 h-0 mt-3 m-2"></div>
               </div>
-              <button className="border w-[350px] p-2 m-auto mt-6 rounded-md text-white  ">
+              <button className="border w-[350px] p-2 m-auto mt-6 rounded-md text-white">
                 <center>
                   <svg
                     width="32"
@@ -116,10 +147,10 @@ const router =useRouter();
                   </svg>
                 </center>
               </button>
-              <p className="text-sm mt-28 mb-2   ">
+              <p className="text-sm mt-28 mb-2">
                 Don't have an account?{" "}
                 <Link href="/registerverify">
-                <span className="text-orange-500">Register</span>{" "}
+                  <span className="text-orange-500">Register</span>
                 </Link>
               </p>
             </center>

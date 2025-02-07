@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-Link;
+import axios from "axios";
+
 const Register = () => {
   const [verificationCodeError, setVerificationCodeError] = useState("");
-
   const [details, setDetails] = useState({
     vcode: "",
   });
@@ -16,50 +16,75 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(details)
+
+    // Basic validation (you can customize this)
     if (!validateVcode(details.vcode)) {
-      verificationCodeError("Invalid email");
+      setVerificationCodeError("Invalid verification code");
     } else {
-      verificationCodeError("");
+      setVerificationCodeError("");
+
+      // Make API request to registration endpoint
+      try {
+        const response = await axios.post("http://127.0.0.1:8000/api/auth/registration/", {
+          vcode: details.vcode,
+        });
+
+        if (response.status === 200) {
+          // Handle success response here
+          console.log("Registration successful:", response.data);
+          // Redirect or show success message
+        }
+      } catch (error) {
+        // Handle error (e.g., invalid verification code, server errors)
+        console.error("Error during registration:", error);
+        setVerificationCodeError("Error during registration, please try again.");
+      }
     }
+  };
+
+  const validateVcode = (vcode) => {
+    // Add your validation logic here (example: just checking length)
+    return vcode.length === 6; // Assuming the verification code should be 6 digits
   };
 
   return (
     <div>
-      <div className=" h-[668px]">
-        <div className="w-96 h-full bg-orange-400  m-auto     ">
+      <div className="h-[668px]">
+        <div className="w-96 h-full bg-orange-400 m-auto">
           <p className="text-white text-3xl text-center pt-14 pb-4">Register</p>
-          <div className="bg-white left rounded-t-3xl border     ">
-            <p className="p-6 text-orange-500  text-2xl  ">
-              Hello! Register to get started
-            </p>
+          <div className="bg-white left rounded-t-3xl border">
+            <p className="p-6 text-orange-500 text-2xl">Hello! Register to get started</p>
             <center>
-              <form action="" onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <input
                   type="text"
                   placeholder="Verification Code"
-                  value={setDetails.vcode}
+                  value={details.vcode}
                   onChange={handleChange}
                   name="vcode"
-                  className="border  w-[350px] p-2 m-auto bg-gray-100 mt-2  rounded-md mb-32 "
+                  className="border w-[350px] p-2 m-auto bg-gray-100 mt-2 rounded-md mb-32"
                 />
-                <Link href="/details">
-                  <button className="bg-orange-500 w-[350px] p-2 m-auto mt-8 rounded-md text-white ">
-                    Next
-                  </button>
-                </Link>
+                {verificationCodeError && (
+                  <p className="text-red-500 text-sm mt-2">{verificationCodeError}</p>
+                )}
+                <button
+                  type="submit"
+                  className="bg-orange-500 w-[350px] p-2 m-auto mt-8 rounded-md text-white"
+                >
+                  Next
+                </button>
               </form>
               <p className="text-xs mt-2">
-                Forgot your login details? <b>Get help logging in</b>{" "}
+                Forgot your login details? <b>Get help logging in</b>
               </p>
               <div className="flex mt-4">
                 <div className="border bg-gray-200 w-28 h-0 mt-3 m-2"></div>
                 <p className="text-sm">or Register with</p>
                 <div className="border bg-gray-200 w-32 h-0 mt-3 m-2"></div>
               </div>
-              <button className="border w-[350px] p-2 m-auto mt-7 rounded-md  ">
+              <button className="border w-[350px] p-2 m-auto mt-7 rounded-md">
                 <center>
                   <svg
                     width="32"
@@ -95,9 +120,8 @@ const Register = () => {
                   </svg>
                 </center>
               </button>
-              <p className="text-sm  mb-2  mt-16 ">
-                Already have an account?{" "}
-                <span className="text-orange-500">Login</span>{" "}
+              <p className="text-sm mb-2 mt-16">
+                Already have an account? <span className="text-orange-500">Login</span>
               </p>
             </center>
           </div>
